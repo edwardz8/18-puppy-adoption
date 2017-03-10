@@ -17,8 +17,18 @@
 
       <div class="section">
       <div class="container">
-        <router-view></router-view>
+
+        <div class="column is-one-third">
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>Adopt a Puppy</h2>
+          </div>
+            <div class="panel-block"></div>
+            <div class="panel-block"></div>
+          </div>
+        </div>
       </div>
+    </div>
     </div>
 
 
