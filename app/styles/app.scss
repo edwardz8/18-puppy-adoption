@@ -4,6 +4,19 @@
 $c-primary: hsl(218, 71%,  53%);
 
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-@import 'bulma/bulma';
-// @import 'font-awesome';
+@import 'bulma';
+@import 'font-awesome';
 @import 'box-sizing';
+
+.nav {
+  background: $c-primary;
+
+  .nav-item {
+    color: white;
+  }
+}
+
+.is-brand {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
