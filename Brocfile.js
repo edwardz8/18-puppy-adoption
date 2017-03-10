@@ -19,7 +19,7 @@ const replace = require('rollup-plugin-replace');
 const builtins = require('rollup-plugin-node-builtins');
 const globals = require('rollup-plugin-node-globals');
 const commonjs = require('rollup-plugin-commonjs');
-// const vue = require('rollup-plugin-vue');
+const vue = require('rollup-plugin-vue');
 
 const plugins = [
   replace({
@@ -29,7 +29,7 @@ const plugins = [
   commonjs({ include: 'node_modules/**' }),
   builtins(),
   globals(),
-  // vue(),
+  vue(),
 ];
 
 
@@ -45,7 +45,7 @@ const stylePaths = [
   'node_modules/normalize-css',
   'node_modules/yoga-sass/assets',
   // Add any extra libs you want to import from node modules in sass here...
-  // 'node_modules/bulma',
+  'node_modules/bulma',
 ];
 const appNoSass = rm('app', '**/*.scss');
 
