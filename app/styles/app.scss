@@ -23,11 +23,24 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 
 .panel-img {
   border-radius: .2rem;
-  height: 6rem;
-  width: 6rem;
+  height: 5rem;
+  width: 5rem;
 }
 
 .panel-info {
   padding-left: 1rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
+}
+
+.table {
+  margin-top: 2rem;
+}
+
+.main-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.puppy-header {
+  font-size: 1.5rem;
 }
