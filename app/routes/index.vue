@@ -19,7 +19,7 @@
       <div class="section">
       <div class="container">
       <div class="columns">
-        <div class="column is-one-third">
+        <!--<div class="column is-one-third">
         <div class="panel">
           <div class="panel-heading">
             <h2>Adopt a Puppy</h2>
@@ -73,7 +73,7 @@
             </div>
             </div>
           </div>
-        </div>
+        </div>-->
 
         <div class="column is-two-thirds">
           <div class="main-info">
