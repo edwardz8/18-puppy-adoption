@@ -5,8 +5,6 @@
 
       <div class="nav">
         <div class="nav-left">
-          <!--<router-link v-bind:to="{ name: 'index' }">Puppies</router-link>
-          -->
           <a href="#" class="nav-item is-brand">Puppies</a>
         </div>
 
