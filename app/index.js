@@ -5,19 +5,25 @@ import VueRouter from 'vue-router';
 import App from './routes/application.vue';
 import Index from './routes/index.vue';
 import NewRoute from './routes/new-route.vue';
+import Detail from './routes/detail.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'index',
     component: Index,
+    name: 'index',
   },
   {
     path: '/new-route',
     component: NewRoute,
     name: 'new-route',
+  },
+  {
+    path: '/detail',
+    component: Detail,
+    name: 'detail',
   }
 ];
 
