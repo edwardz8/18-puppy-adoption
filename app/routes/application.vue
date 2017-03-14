@@ -81,15 +81,21 @@
 </template>
 
 <script>
+import store from './app/store';
+import { findAll } from './actions/puppy';
+
 export default {
   name: 'App',
   data() {
     return {
+      puppies: this.$select('puppies'),
     };
   },
 
   methods: {
-
+    findAll(data) {
+      store.dispatch(findAll(data));
+    },
   },
 };
 </script>
