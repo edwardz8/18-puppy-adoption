@@ -1,27 +1,27 @@
 <template lang="html">
   <div class="">
 
-      <form @submit.prevent="submit">
+      <form v-on:submit.prevent="submit">
       <div class="column is-two-thirds">
 
         <h1 class="title">Found a Puppy? We Can Help!</h1>
 
         <div class="control-panel">
 
-          <label for="pup-name" class="label">Name</label>
+          <label for="name" class="label">Name</label>
           <p class="Name">
-          <input type="text" class="input" id="pup-name">
+          <input type="text" class="input" v-model="formValues.name">
           </p>
 
-          <label for="pup-age" class="label">Age</label>
+          <label for="age" class="label">Age</label>
           <p class="control">
-          <input type="text" class="input" id="pup-age">
+          <input type="text" class="input" v-model="formValues.age">
           </p>
 
-          <label for="pup-sex" class="label">Sex</label>
+          <label for="sex" class="label">Sex</label>
           <p class="control">
             <span class="select">
-          <select class="">
+          <select v-model="formValues.sex">
             <option value="#">Please Select an Option</option>
             <option value="Female">Female</option>
             <option value="Male">Male</option>
@@ -30,26 +30,28 @@
           </p>
 
           <p class="control">
-          <label for="pup-color" class="label">Color</label>
-          <input type="text" class="input" id="pup-color">
+          <label for="color" class="label">Color</label>
+          <input type="text" class="input" v-model="formValues.color">
           </p>
           <p class="control">
-          <label for="pup-breed" class="label">Breed</label>
-          <input type="text" class="input" id="pup-breed">
+          <label for="breed" class="label">Breed</label>
+          <input type="text" class="input" v-model="formValues.breed">
           </p>
           <p class="control">
-          <label for="pup-img" class="label">Image Url</label>
-          <input type="text" class="input" id="pup-img">
+          <label for="img" class="label">Image Url</label>
+          <input type="text" class="input" v-model="formValues.image_url">
           </p>
 
           <label class="label">Description</label>
           <p class="control">
-          <textarea class="textarea" placeholder="Textarea"></textarea>
+          <textarea class="textarea" placeholder="Textarea"
+             v-model="formValues.description">
+          </textarea>
           </p>
 
           <p class="control">
           <a href="/" class="button">Back</a>
-          <a class="button is-info">Submit</a>
+          <button class="button is-info">Submit</button>
           </p>
 
         </div>
@@ -61,7 +63,8 @@
 </template>
 
 <script>
-// import store from '../store';
+import store from '../store';
+import { create } from '../actions/puppy';
 
 
 export default {
@@ -75,12 +78,17 @@ export default {
         breed: '',
         image_url: '',
         description: '',
-      }
+      },
     };
   },
 
   methods: {
-
+    submit() {
+      store.dispatch(create(this.formValues)).then(() => {
+        this.$router.push({ name: 'index' });
+      });
+    }
   },
 };
+
 </script>

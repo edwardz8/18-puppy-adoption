@@ -12,4 +12,5 @@ export default function puppies(state = [], action) {
       return _.unionBy([action.data], state, '_id');
     default:
       return state;
-  };
+  }
+}

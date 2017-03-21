@@ -22,38 +22,17 @@
           <div class="panel-heading">
             <h2>Adopt a Puppy</h2>
           </div>
-            <div class="panel-block">
-              <img src="https://i.ytimg.com/vi/opKg3fyqWt4/hqdefault.jpg"
-              class="panel-img" alt="">
+
+            <div v-for="puppy in puppies" class="panel-block">
+              <img :src="puppy.image_url" class="panel-img" alt="">
+
               <div class="panel-info">
-              <p class="panel-name">Luna</p>
-              <a href="#" class="panel-link">Read More</a>
+              <p class="panel-name">{{puppy.name}}</p>
+              <router-link :to="{ name: 'detail', params: { id: puppy.id }}"
+              class="panel-link">Read More</router-link>
             </div>
             </div>
-            <div class="panel-block">
-              <img src="https://i.ytimg.com/vi/opKg3fyqWt4/hqdefault.jpg"
-              class="panel-img" alt="">
-              <div class="panel-info">
-              <p class="panel-name">Luna</p>
-              <a href="#" class="panel-link">Read More</a>
-            </div>
-            </div>
-            <div class="panel-block">
-              <img src="https://i.ytimg.com/vi/opKg3fyqWt4/hqdefault.jpg"
-              class="panel-img" alt="">
-              <div class="panel-info">
-              <p class="panel-name">Luna</p>
-              <a href="#" class="panel-link">Read More</a>
-            </div>
-            </div>
-            <div class="panel-block">
-              <img src="https://i.ytimg.com/vi/opKg3fyqWt4/hqdefault.jpg"
-              class="panel-img" alt="">
-              <div class="panel-info">
-              <p class="panel-name">Luna</p>
-              <a href="#" class="panel-link">Read More</a>
-            </div>
-            </div>
+
             <div class="panel-block">
               <img src="https://i.ytimg.com/vi/opKg3fyqWt4/hqdefault.jpg"
               class="panel-img" alt="">
@@ -81,8 +60,8 @@
 </template>
 
 <script>
-import store from './app/store';
-import { findAll } from './actions/puppy';
+import store from '../store';
+import { findAll } from '../actions/puppy';
 
 export default {
   name: 'App',
@@ -92,10 +71,12 @@ export default {
     };
   },
 
+  created() {
+    store.dispatch(findAll(''));
+  },
+
   methods: {
-    findAll(data) {
-      store.dispatch(findAll(data));
-    },
+
   },
 };
 </script>
